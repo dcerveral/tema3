@@ -1,0 +1,33 @@
+AddOutputFilterByType DEFLATE text/text text/html text/plain text/xml text/css application/x-javascript application/javascript
+
+RewriteEngine on
+
+ 
+
+ 
+
+
+RewriteRule ^admin?$ cms/admin.php [L]
+RewriteRule ^style.css?$ cms/style.php [L]
+RewriteRule ^paginas/?$ cms/index.php?pag=pagina&TIPO=pagina [L]
+RewriteRule ^categorias/?$ cms/index.php?pag=categoria&TIPO=categoria [L]
+RewriteRule ^entradas/?$ cms/index.php?pag=entrada&TIPO=entrada [L]
+RewriteRule ^productos/?$ cms/index.php?pag=producto&TIPO=producto [L]
+ 
+
+RewriteRule ^([^/.]+)$ index.php?pag=$1 [L]
+
+RewriteRule ^paginas/([0-9]+)/?$ cms/index.php?pag=pagina&TIPO=pagina&p=$1 [L]
+RewriteRule ^categorias/([0-9]+)/?$ cms/index.php?pag=cayegoria&TIPO=categoria&p=$1 [L]
+RewriteRule ^entradas/([0-9]+)/?$ cms/index.php?pag=entrada&TIPO=entrada&p=$1 [L]
+RewriteRule ^productos/([0-9]+)/?$ cms/index.php?pag=producto&TIPO=producto&p=$1 [L]
+
+ 
+
+RewriteRule ^([^/.]+)/([0-9]+)$ cms/index.php?pag=$1&p=$2 [L]
+RewriteRule ^([^/.]+)/([0-9]+)/([0-9]+)$ cms/index.php?pag=$1&p=$2&v=$3 [L]
+
+
+RewriteRule ^img/([0-9]+)_(.*)$ cms/thumb.php?file=$2&width=$1[L]
+RewriteRule ^img/(.*)$ cms/thumb.php?file=$1&width=800 [L]
+

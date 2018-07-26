@@ -1,0 +1,1 @@
+*{box-sizing:border-box}.wrapper{width:100%;margin:auto}.square{font-family:sans-serif;color:#fff;padding:1em;float:left;width:100%;margin-right:0%;background:#00bfff}.square:last-child{margin-right:0}.square:before{content:"";display:block;padding-top:100%;float:left}
